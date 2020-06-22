@@ -47,16 +47,16 @@ void preorder(node* root)
 	if (root == NULL) 
         return;
 	cout<<root->data<<"  ";
-	inorder(root->left);
-	inorder(root->right);
+	preorder(root->left);
+	preorder(root->right);
 }
 
 void postorder(node* root)
 {
 	if (root == NULL) 
         return;
-	inorder(root->left);
-	inorder(root->right);
+	postorder(root->left);
+	postorder(root->right);
 	cout<<root->data<<"  ";
 }
 
@@ -148,6 +148,21 @@ node* deletenode(node* root, int data)
 	return root;
 }
 
+
+void LevelOrder(node *root) {
+	if(root == NULL) return;
+	queue<node*> Q;
+	Q.push(root);  
+	//while there is at least one discovered node
+	while(!Q.empty()) {
+		node* current = Q.front();
+		Q.pop(); // removing the element at front
+		cout<<current->data<<" ";
+		if(current->left != NULL) Q.push(current->left);
+		if(current->right != NULL) Q.push(current->right);
+		
+	}
+}
 int level(node* root)
 {
 	if(root==NULL)
@@ -215,5 +230,7 @@ int main()
 	}
 	cout<<endl<<"The height of tree is "<<level(root);
 
+	cout<<endl<<"level traversal";
+	LevelOrder(root);
 	return 0;
 }
