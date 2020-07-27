@@ -1,11 +1,18 @@
 // adjacency matrix
 #include<bits/stdc++.h>
 using namespace std;
-int arr[20][20];
+int arr[20][20];// default value is 0
 void displaymatrix(int v)
 {
+	cout<<" |";
+	for(int k=0; k<v; k++)
+	{
+		cout<<k+1<<" ";
+	}
+	cout<<endl;
 	for(int i=0; i<v; i++)
 	{
+		cout<<i+1<<"|";
 		for(int j=0; j<v; j++)
 		{
 			cout<<arr[i][j]<<" ";
