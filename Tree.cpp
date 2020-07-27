@@ -50,13 +50,15 @@ void preorder(node* root)
 	preorder(root->left);
 	preorder(root->right);
 }
-
+int i=0,j=0;
 void postorder(node* root)
 {
 	if (root == NULL) 
         return;
 	postorder(root->left);
+	cout<<"prev  "<<i++<<endl;
 	postorder(root->right);
+	cout<<"next"<<j++<<endl;
 	cout<<root->data<<"  ";
 }
 
@@ -232,5 +234,7 @@ int main()
 
 	cout<<endl<<"level traversal";
 	LevelOrder(root);
+
+	
 	return 0;
 }

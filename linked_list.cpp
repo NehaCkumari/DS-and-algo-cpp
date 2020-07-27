@@ -108,8 +108,8 @@ int main()
 	addnode(head,7);
 	display(head);
 	cout<<endl<<search(head,10)<<endl;
-	head=deleteof(head,2);
-	cout<<endl<<"After deletion "<<2<<endl;
+	head=deleteof(head,7);
+	cout<<endl<<"After deletion "<<7<<endl;
 	display(head);
 	
 	
